@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "gorpgamef65a2b65": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

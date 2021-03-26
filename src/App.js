@@ -11,12 +11,12 @@ import Col from 'react-bootstrap/Col';
 function App() {
 
   const [wager, setWager] = useState();
-  const [player,setPlayer] = useState([]);
+  const [players,setPlayer] = useState([]);
   const [gorp,setGorp] = useState([]);
 
   function deathroll() { 
     const startingRoll = wager * 2;
-    setPlayer([...player,((Math.floor(Math.random() * startingRoll) + 1))]) }
+    setPlayer([...players,((Math.floor(Math.random() * startingRoll) + 1))]) }
 
   return (
     <Container className="alex">
@@ -25,7 +25,11 @@ function App() {
       <input onChange={e => setWager(e.target.value)}></input>
       </Row>
       <Row>
-      {player}
+      <div>
+        {players.map(player => (
+          <li>{player}</li>
+        ))}
+      </div>
       </Row>
       <Row>
       <button onClick={deathroll}>Click me to deathroll!</button>
